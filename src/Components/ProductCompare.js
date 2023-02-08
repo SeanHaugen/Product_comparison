@@ -19,6 +19,8 @@ function ProductCompare() {
     
       return (
       <div>
+
+        {/* show products  */}
         <ul className="product-container">
         {products.map((product) => (
           <ul key={product.id}>
