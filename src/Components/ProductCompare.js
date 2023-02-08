@@ -34,6 +34,7 @@ function ProductCompare() {
                     <li>Hardware: {product.hardware}</li>
                     <li>{product.hardware2}</li>
                     <li>{product.hardware3}</li>
+                    <li>RCAT rating: {product.RCAT}</li>
                     <li>Production time: {product.production}</li>
                     {product.image}
                     <input
@@ -56,6 +57,7 @@ function ProductCompare() {
         let hardwareClass = "";
         let hardware2Class = "";
         let hardware3Class = "";
+        let RCATClass = "";
         let productionClass = "";
         if (index === 1) {
             // compare the product properties between two products
@@ -75,6 +77,9 @@ function ProductCompare() {
               }
               if (prevProduct.hardware3 !== product.hardware3) {
                 hardware3Class = "highlight";
+              }
+              if (prevProduct.RCAT !== product.RCAT) {
+                RCATClass = "highlight";
               }
               if (prevProduct.production !== product.production) {
                 productionClass = "highlight";
@@ -114,6 +119,7 @@ function ProductCompare() {
             <li className={hardwareClass}>Hardware: {product.hardware}</li>
             <li className={hardware2Class}>{product.hardware2}</li>
             <li className={hardware3Class}>{product.hardware3}</li>
+            <li className={RCATClass}>RCAT rating: {product.RCAT}</li>
             <li className={productionClass}>Production Time: {product.production}</li>
             <br />
           </div>
