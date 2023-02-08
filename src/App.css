@@ -1,38 +1,84 @@
-.App {
-  text-align: center;
+*,*::after,*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+
+   .product-container {
+    display: grid;
+    grid-template-columns: repeat(3, 2fr);
+    grid-gap: 10px;
+    background-color: #e6e6e6;
+    border-radius: 10px;
+    padding: 20px;
+
   }
-}
+  
+  .container {
+    width: 100%;
+    margin: 0 auto;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    padding: 20px;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+    /* text-align: center; */
   }
-  to {
-    transform: rotate(360deg);
+
+  .container-2 {
+    width: 100%;
+    margin: 0 auto;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-flow: column wrap;
+
+    /* text-align: center; */
   }
-}
+  
+  .product-label {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 5px 0;
+  }
+  
+  li {
+    list-style-type: none;
+    margin: 10px 0;
+  }
+  
+  ul {
+    padding: 0;
+    width: 100%;
+    background-color: #d9d9d9;
+    border-radius: 10px;
+    padding: 20px;
+    /* text-align: center; */
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  .mediaClass {
+    background: red;
+  }
+
+  .sizeClass {
+    background: red;
+  }
+
+  
+  .highlight {
+    background-color: yellow;
+    
+
+  }
+  
+/*   
+  hardwareClass = "",
+  hardware2Class = "",
+  productionClass = ""; */

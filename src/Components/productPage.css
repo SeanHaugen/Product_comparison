@@ -1,0 +1,29 @@
+/* *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    size: 16px
+}
+
+.container {
+    border: 1px solid black;
+    margin-left: 2em;
+    margin-right: 70em;
+    margin-top: 10px;
+    display: flex;
+
+}
+
+.table {
+    display: flex;
+    flex-flow: column wrap;
+    border: 1px solid blue;
+    text-indent: initial;
+    border-spacing: 2px;
+}
+
+td {
+
+    margin: 1em;
+
+} */
