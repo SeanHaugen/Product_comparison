@@ -1,6 +1,6 @@
 import React from 'react';
 import ProductCompare from './Components/ProductCompare';
-import './app.css';
+import './App.css';
 
 function App () {
 
