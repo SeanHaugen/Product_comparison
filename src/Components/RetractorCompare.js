@@ -1,8 +1,8 @@
-import products from "../products/products"
+import Retractors from "../products/Retractors"
 import { useState } from "react"
 // import ProductPage from "./ProductPage"
 
-function ProductCompare() {
+function RetractorCompare() {
 
     const [selectedItems, setSelectedItems] = useState([])
 
@@ -14,43 +14,64 @@ function ProductCompare() {
         }
       };
 
+    const [limitReached, setLimitReached ] = useState(false)
+    const productLimit = 3
 
 
-    
+
+    const handleSelectedProducts = (product) => {
+      if(selectedItems.length < productLimit) {
+        setSelectedItems([...selectedItems, product])
+      } else {
+        setLimitReached(true) 
+        selectedItems(2)
+      }
+    }
+
+
+    const handleRemoveProducts = () => {
+      setSelectedItems(selectedItems.filter(product => product.id !== product.id))
+    }
+  
       return (
       <div>
 
+        {limitReached && (<p>You have reached the product limit of {productLimit}.</p>)}
+
         {/* show products  */}
         <ul className="product-container">
-        {products.map((product) => (
+        {Retractors.map((product) => (
           <ul key={product.id}>
             <label className="product-label">
 
               <div className="container">
                 {product.name}
                 <li>{product.id}</li>
-                    <li>Media: {product.media}</li>
-                    <li>Size: {product.size}</li>
-                    <li>Hardware: {product.hardware}</li>
-                    <li>{product.hardware2}</li>
-                    <li>{product.hardware3}</li>
-                    <li>RCAT rating: {product.RCAT}</li>
-                    <li>Production time: {product.production}</li>
                     {product.image}
-                    <input
-                type="checkbox"
-                checked={selectedItems.includes(product)}
-                onChange={() => handleCheckboxChange(product)}
-              />
-              <br />
+                    <button
+                      type="checkbox"
+                      checked={selectedItems.includes(product) }
+                      onChange={() => handleCheckboxChange(product)}
+                      onClick={() => handleSelectedProducts(product)}
+                    >
+                    compare
+                    </button>
+                  <br />
                 </div>
             </label>
           </ul>
         ))}
       </ul>
       <hr />
+
+
+
+
+
+          {/* the following is the product comparison which opens once the product checkbox is selected */}
       <h3>Selected Products</h3>
       <ul>
+        {/* map the products selected */}
       {selectedItems.map((product, index) => {
         let mediaClass = "";
         let sizeClass = "";
@@ -59,6 +80,7 @@ function ProductCompare() {
         let hardware3Class = "";
         let RCATClass = "";
         let productionClass = "";
+
         if (index === 1) {
             // compare the product properties between two products
             const prevProduct = selectedItems[index - 1];
@@ -122,13 +144,19 @@ function ProductCompare() {
             <li className={RCATClass}>RCAT rating: {product.RCAT}</li>
             <li className={productionClass}>Production Time: {product.production}</li>
             <br />
+          
           </div>
             );
             })}
       </ul>
+      <button onClick={handleRemoveProducts} >Clear Products</button>
+
+
+
+
     </div>
     
     )
 }
 
-export default ProductCompare;
+export default RetractorCompare;
